@@ -214,7 +214,7 @@ function FilterContent({
                       </span>
                       <span className="shrink-0 grayscale opacity-70">
                         <Image
-                          src={b.logo}
+                          src={getAssetPath(b.logo)}
                           alt={b.name}
                           width={18}
                           height={18}
