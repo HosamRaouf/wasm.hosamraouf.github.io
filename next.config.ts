@@ -1,16 +1,30 @@
 import type { NextConfig } from "next";
 
-console.log('Next.js Config: output=export, basePath=' + (process.env.NODE_ENV === 'production' ? '/wasm.hosamraouf.github.io' : ''));
-
-const nextConfig: NextConfig = {
+const withAssetPrefix: NextConfig = {
   output: 'export',
   basePath: process.env.NODE_ENV === 'production' ? '/wasm.hosamraouf.github.io' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/wasm.hosamraouf.github.io/' : '',
   images: {
     unoptimized: true,
   },
-  // Ensure we don't try to use server features
   trailingSlash: true,
+  webpack: (config, { isServer }) => {
+    if (!isServer && process.env.NODE_ENV === 'production') {
+      // Custom webpack rule to replace asset paths in CSS
+      config.module.rules.push({
+        test: /\.css$/,
+        use: {
+          loader: 'string-replace-loader',
+          options: {
+            search: '/assets/',
+            replace: '/wasm.hosamraouf.github.io/assets/',
+            flags: 'g',
+          },
+        },
+      });
+    }
+    return config;
+  },
 };
 
-export default nextConfig;
+export default withAssetPrefix;
