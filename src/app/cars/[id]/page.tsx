@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import { cars } from '@/lib/data';
+import { carRepository } from '@/lib/repositories/CarRepository';
 import MediaGallery from '@/components/car-detail/MediaGallery';
 import CarIdentityBlock from '@/components/car-detail/CarIdentityBlock';
 import LiveAuctionBanner from '@/components/car-detail/LiveAuctionBanner';
@@ -9,13 +10,19 @@ import SpecTabs from '@/components/car-detail/SpecTabs';
 import UserActionButtons from '@/components/car-detail/UserActionButtons';
 import SellerCard from '@/components/car-detail/SellerCard';
 
+export async function generateStaticParams() {
+  return cars.map((car) => ({
+    id: car.id,
+  }));
+}
+
 export default async function CarDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const car = cars.find((c) => c.id === id);
+  const car = await carRepository.getById(id);
 
   if (!car) {
     return (

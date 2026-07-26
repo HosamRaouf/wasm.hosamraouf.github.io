@@ -2,10 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/wasm.hosamraouf.github.io',
+  basePath: process.env.NODE_ENV === 'production' ? '/wasm.hosamraouf.github.io' : '',
   images: {
     unoptimized: true,
   },
+  // Ensure we don't try to use server features
+  trailingSlash: true,
 };
 
 export default nextConfig;
