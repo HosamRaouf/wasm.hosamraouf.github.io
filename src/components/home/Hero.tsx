@@ -225,7 +225,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={show ? { opacity: 0.3, scale: 1 } : {}}
           transition={{ duration: 2, ease: 'easeOut' }}
-          style={{ backgroundImage: {getAssetPath('/assets/hero-bg.png')} }}
+          style={{ backgroundImage: getAssetPath('/assets/hero-bg.png') }}
         />
 
         {/* Fade to black — bottom */}
