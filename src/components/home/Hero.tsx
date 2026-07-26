@@ -155,7 +155,7 @@ function HeroCarCard({ car, isActive }: { car: typeof cars[number]; isActive?: b
     >
       <div className="relative h-32 sm:h-40 overflow-hidden">
         <img
-          src={car.image}
+          src={getAssetPath(car.image)}
           alt={car.nameAr}
           className="w-full h-full object-cover"
         />
