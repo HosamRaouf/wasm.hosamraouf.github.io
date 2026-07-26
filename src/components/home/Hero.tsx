@@ -7,6 +7,7 @@ import { ChevronDown, ChevronLeft, ChevronRight, ArrowLeft, Gauge, Fuel } from '
 import { cars } from '@/lib/data';
 import { getAssetPath } from '@/lib/paths';
 
+
 /* ─── Animated Gradient Background ─────────────────────────── */
 function AnimatedGradient() {
   const ref = useRef<HTMLDivElement>(null);
