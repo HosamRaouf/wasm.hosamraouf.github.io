@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { getAssetPath } from '@/lib/paths';
 
 const links = [
   { href: '/', labelAr: 'الرئيسية', labelEn: 'Home' },
@@ -40,7 +41,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0 min-h-touchMd">
           <img
-            src="/assets/wasm-transparent.png"
+            src={getAssetPath("/assets/wasm-transparent.png")}
             alt="WASM"
             className="h-8 sm:h-10 w-auto object-contain"
           />

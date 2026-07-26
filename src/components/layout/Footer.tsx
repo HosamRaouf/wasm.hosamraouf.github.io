@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ShieldCheck, BadgeCheck, Globe, MapPin, Phone, Clock } from 'lucide-react';
+import { getAssetPath } from '@/lib/paths';
 
 const sections = {
   sections: {
@@ -122,7 +123,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <img
-              src="/assets/wasm-transparent.png"
+              src={getAssetPath("/assets/wasm-transparent.png")}
               alt="WASM"
               className="h-10 w-auto object-contain mb-3 sm:mb-4"
             />

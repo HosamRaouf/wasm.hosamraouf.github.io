@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, useInView, useMotionValue, animate } from 'framer-motion';
 import { ArrowLeft, Gavel, Clock, MapPin, Flame, Gauge, Fuel, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cars } from '@/lib/data';
+import { getAssetPath } from '@/lib/paths';
 
 const auctionCars = cars.filter((c) => c.isAuction);
 
@@ -57,7 +58,7 @@ function AuctionCard({ car }: { car: typeof auctionCars[number] }) {
     >
       <div className="relative h-48 sm:h-56 overflow-hidden">
         <img
-          src={car.image}
+          src={getAssetPath(car.image)}
           alt={car.nameAr}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

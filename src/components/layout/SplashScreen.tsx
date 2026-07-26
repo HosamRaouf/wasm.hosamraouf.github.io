@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import { getAssetPath } from '@/lib/paths';
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -53,7 +54,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
     >
       <motion.video
         ref={videoRef}
-        src="/assets/Acceleration_mode_HMI_loading_0-100_202607252037.mp4"
+        src={"/assets/asseAcceleration_mode_HMI_loading_0-100_202607252037.mp4"}
         muted
         playsInline
         preload="auto"
@@ -88,7 +89,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           {/* Main Circle Container */}
           <div className="relative h-28 w-28 rounded-full bg-obsidian/40 backdrop-blur-xl border border-gold/30 flex items-center justify-center shadow-[0_0_60px_rgba(212,175,55,0.15)]">
             <img
-              src="/assets/wasm-transparent.png"
+              src={"/assets/wasm-transparent.png"}
               alt="WASM Logo"
               className="h-24 w-auto object-contain brightness-110"
             />

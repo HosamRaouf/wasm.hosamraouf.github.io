@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useCompareStore } from '@/stores';
+import { getAssetPath } from '@/lib/paths';
 
 export default function FloatingCompareBanner() {
   const router = useRouter();
@@ -32,7 +33,7 @@ export default function FloatingCompareBanner() {
                 {v ? (
                   <>
                     <img
-                      src={v.image}
+                      src={getAssetPath(v.image)}
                       alt={v.name}
                       className="h-10 w-14 rounded-lg object-cover shrink-0"
                     />

@@ -6,6 +6,7 @@ import { OrbitControls, useGLTF, Environment, ContactShadows } from '@react-thre
 import { motion, useMotionValue, animate } from 'framer-motion';
 import { RotateCw, ZoomIn, ZoomOut, Pause, Play, RefreshCw } from 'lucide-react';
 import * as THREE from 'three';
+import { getAssetPath } from '@/lib/paths';
 
 const INITIAL_CAMERA = [0, 2, 7] as const;
 
@@ -16,7 +17,7 @@ interface CameraHandle {
 }
 
 function CarModel({ autoRotate, rotateRef }: { autoRotate: boolean; rotateRef: React.MutableRefObject<boolean> }) {
-  const { scene } = useGLTF('/assets/bmw_m5_g90_2024__www.vecarz.com.glb');
+  const { scene } = useGLTF(getAssetPath('/assets/bmw_m5_g90_2024__www.vecarz.com.glb'));
   const ref = useRef<THREE.Group>(null);
 
   useEffect(() => {

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Heart, Share2, Scale, Calendar, Gauge, Fuel, Cog } from 'lucide-react';
 import { useCompareStore, useFavoriteStore, useToastStore } from '@/stores';
+import { getAssetPath } from '@/lib/paths';
 
 interface Car {
   id: string;
@@ -102,7 +103,7 @@ export default function CarCard({ car, variant = 'default' }: CarCardProps) {
       {/* Image area */}
       <div className="relative aspect-[16/10] overflow-hidden bg-charcoal-light">
         <img
-          src={car.image}
+          src={getAssetPath(car.image)}
           alt={car.nameAr}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
           loading="lazy"

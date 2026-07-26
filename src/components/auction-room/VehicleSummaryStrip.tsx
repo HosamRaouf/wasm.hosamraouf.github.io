@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { MapPin, Fuel, Palette, Calendar, Gauge, Users, ChevronLeft, ExternalLink } from 'lucide-react';
+import { getAssetPath } from '@/lib/paths';
 
 interface VehicleSummaryStripProps {
   car: {
@@ -44,7 +45,7 @@ export default function VehicleSummaryStrip({ car }: VehicleSummaryStripProps) {
         {/* Thumbnail */}
         <div className="relative h-12 w-16 sm:h-14 sm:w-20 flex-shrink-0 overflow-hidden rounded-xl border border-white/[0.08]">
           <img
-            src={car.image}
+            src={getAssetPath(car.image)}
             alt={car.nameAr}
             className="h-full w-full object-cover"
           />

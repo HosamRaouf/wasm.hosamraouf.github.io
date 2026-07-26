@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { useCompareStore } from '@/stores';
+import { getAssetPath } from '@/lib/paths';
 
 export default function CompareBar() {
   const { vehicles, removeVehicle, clearVehicles } = useCompareStore();
@@ -36,7 +37,7 @@ export default function CompareBar() {
                     {v ? (
                       <>
                         <img
-                          src={v.image}
+                          src={getAssetPath(v.image)}
                           alt={v.name}
                           className="h-9 w-12 sm:h-10 sm:w-14 rounded-md object-cover shrink-0"
                         />

@@ -9,18 +9,19 @@ import CountdownTimer from '@/components/auction-room/CountdownTimer';
 import BidHistoryPanel from '@/components/auction-room/BidHistoryPanel';
 import RulesAccordion from '@/components/auction-room/RulesAccordion';
 import { Car } from '@/lib/types';
+import { getAssetPath } from '@/lib/paths';
 
 const fakeImages = [
-  '/assets/cars/suv_land_cruiser.jpg',
-  '/assets/cars/suv_g_class.jpg',
-  '/assets/cars/sedan_luxury.jpg',
-  '/assets/cars/sports_orange.jpg',
-  '/assets/cars/pickup_f150.jpg',
-  '/assets/cars/suv_land_cruiser.jpg',
-  '/assets/cars/suv_g_class.jpg',
-  '/assets/cars/sedan_luxury.jpg',
-  '/assets/cars/sports_orange.jpg',
-  '/assets/cars/suv_land_cruiser.jpg',
+  getAssetPath('/assets/cars/suv_land_cruiser.jpg'),
+  getAssetPath('/assets/cars/suv_g_class.jpg'),
+  getAssetPath('/assets/cars/sedan_luxury.jpg'),
+  getAssetPath('/assets/cars/sports_orange.jpg'),
+  getAssetPath('/assets/cars/pickup_f150.jpg'),
+  getAssetPath('/assets/cars/suv_land_cruiser.jpg'),
+  getAssetPath('/assets/cars/suv_g_class.jpg'),
+  getAssetPath('/assets/cars/sedan_luxury.jpg'),
+  getAssetPath('/assets/cars/sports_orange.jpg'),
+  getAssetPath('/assets/cars/suv_land_cruiser.jpg'),
 ];
 
 const fakeBids = [

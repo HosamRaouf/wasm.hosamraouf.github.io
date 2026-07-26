@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { brands } from '@/lib/data';
+import { getAssetPath } from '@/lib/paths';
 
 const marqueeItems = [...brands, ...brands, ...brands];
 

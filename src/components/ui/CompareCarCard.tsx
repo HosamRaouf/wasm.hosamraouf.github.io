@@ -2,6 +2,7 @@
 
 import { Check, Calendar, Gauge, Fuel, Cog, Scale } from 'lucide-react';
 import { useCompareStore, useToastStore } from '@/stores';
+import { getAssetPath } from '@/lib/paths';
 
 interface Car {
   id: string;
@@ -54,7 +55,7 @@ export default function CompareCarCard({ car }: { car: Car }) {
       {/* Image area */}
       <div className="relative aspect-[16/10] overflow-hidden bg-charcoal-light">
         <img
-          src={car.image}
+          src={getAssetPath(car.image)}
           alt={car.nameAr}
           className={`h-full w-full object-cover transition-transform duration-500 ${
             isSelected ? 'scale-[1.03]' : 'group-hover:scale-[1.06]'

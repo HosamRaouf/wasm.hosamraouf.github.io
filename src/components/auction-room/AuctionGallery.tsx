@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Expand, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getAssetPath } from '@/lib/paths';
 
 interface AuctionGalleryProps {
   images: string[];
@@ -22,7 +23,7 @@ export default function AuctionGallery({ images, mainImage, carName }: AuctionGa
         {/* Main image */}
         <div className="relative aspect-[16/10] overflow-hidden">
           <img
-            src={allImages[active] || mainImage}
+            src={getAssetPath(allImages[active] || mainImage)}
             alt={carName}
             className="h-full w-full object-cover transition-transform duration-500"
           />
@@ -54,7 +55,7 @@ export default function AuctionGallery({ images, mainImage, carName }: AuctionGa
               }`}
             >
               <img
-                src={img}
+                src={getAssetPath(img)}
                 alt={`${carName} - صورة ${i + 1}`}
                 className="h-full w-full object-cover"
                 loading="lazy"
@@ -65,7 +66,7 @@ export default function AuctionGallery({ images, mainImage, carName }: AuctionGa
           {hasMore && (
               <div className="relative h-14 w-[72px] sm:h-16 sm:w-20 flex-shrink-0 overflow-hidden rounded-xl border-2 border-white/[0.08]">
               <img
-                src={mainImage}
+                src={getAssetPath(mainImage)}
                 alt=""
                 className="h-full w-full object-cover blur-sm"
                 loading="lazy"
@@ -99,7 +100,7 @@ export default function AuctionGallery({ images, mainImage, carName }: AuctionGa
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={allImages[active] || mainImage}
+                src={getAssetPath(allImages[active] || mainImage)}
                 alt={carName}
                 className="max-h-[85vh] max-w-full rounded-2xl object-contain"
               />

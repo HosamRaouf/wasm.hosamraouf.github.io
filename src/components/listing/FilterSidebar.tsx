@@ -5,6 +5,7 @@ import { ChevronDown, RotateCcw, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { brands } from '@/lib/data';
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/paths';
 
 export interface FilterState {
   brands: string[];

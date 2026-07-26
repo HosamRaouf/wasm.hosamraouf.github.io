@@ -21,7 +21,7 @@ export default function AboutUs() {
             <div className="absolute -inset-4 rounded-3xl bg-gold/10 blur-2xl" />
             <div className="absolute -inset-8 rounded-3xl bg-gold/[0.04] blur-3xl" />
             <img
-              src="./assets/wasss.png"
+              src="/assets/wasss.png"
               alt="وسم للسيارات"
               className="relative h-64 sm:h-80 lg:h-96 w-auto object-contain rounded-2xl"
             />
@@ -51,7 +51,7 @@ export default function AboutUs() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-cream/70 text-sm sm:text-base leading-loose mb-4"
           >
-            نود ان نرحب بكم في معرضنا الافتراضى والذي نقدمه لكم من خلال موقعنا الالكترونى، حيث حرصنا على توضيح مم[...]
+            نود ان نرحب بكم في معرضنا الافتراضى والذي نقدمه لكم من خلال موقعنا الالكترونى، حيث حرصنا على توضيح مميزات سياراتنا واسعارها.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export default function AboutUs() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-cream/70 text-sm sm:text-base leading-loose mb-4"
           >
-            نحن نقدر لكم قضاء بعض الوقت لزيارة موقعنا على شبكة الإنترنت، هدفنا هو منحك جولة تفاعلية لمخزوننا من ا[...]
+            نحن نقدر لكم قضاء بعض الوقت لزيارة موقعنا على شبكة الإنترنت، هدفنا هو منحك جولة تفاعلية لمخزوننا من السيارات الجديدة والمستعملة، بالإضافة إلى السماح لك بالحصول على عرض أسعار أو خدمات ما بعد البيع، أو التقدم للحصول على تمويل بسهولة.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -67,7 +67,7 @@ export default function AboutUs() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-cream/70 text-sm sm:text-base leading-loose mb-4"
           >
-            البحث عن سيارة تلبي احتياجاتك هو عمل شاق مليء بالتوقعات الكبيرة، ومما لا شك فيه اننا في شركة وسم للسي[...]
+            البحث عن سيارة تلبي احتياجاتك هو عمل شاق مليء بالتوقعات الكبيرة، ومما لا شك فيه اننا في شركة وسم للسيارات قمنا بتوفير مجموعة كبيرة ومتميزة من السيارات التي تفكر فيها.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
