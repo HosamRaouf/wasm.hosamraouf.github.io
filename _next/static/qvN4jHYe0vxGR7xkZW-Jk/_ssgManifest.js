@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fauctions\u002F[id]","\u002Fcars\u002F[id]","\u002Fcars\u002Fbrand\u002F[brand]","\u002Fcars\u002Ftype\u002F[type]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
