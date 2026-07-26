@@ -115,7 +115,7 @@ function AnimatedGradient() {
       <div
         className="absolute inset-0 opacity-[0.015] mix-blend-overlay"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='256' height='256' fill='%23000'/%3E%3Crect width='256' height='256' fill='%23fff' filter='url(%23n)' opacity='0.1'/%3E%3C/svg%3E")`,
           backgroundSize: '128px 128px',
         }}
       />
@@ -223,7 +223,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={show ? { opacity: 0.3, scale: 1 } : {}}
           transition={{ duration: 2, ease: 'easeOut' }}
-          style={{ backgroundImage: 'url(/assets/hero-bg.png)' }}
+          style={{ backgroundImage: 'url(./assets/hero-bg.png)' }}
         />
 
         {/* Fade to black — bottom */}
@@ -329,7 +329,7 @@ export default function Hero() {
               }}
             />
             <img
-              src="/assets/wasm-transparent.png"
+              src="./assets/wasm-transparent.png"
               alt="WASM"
               className="relative h-32 sm:h-40 lg:h-48 xl:h-56 w-auto object-contain drop-shadow-[0_0_30px_rgba(212,175,55,0.4)] drop-shadow-[0_0_60px_rgba(212,175,55,0.2)]"
             />
@@ -388,7 +388,7 @@ export default function Hero() {
               {/* Left arrow */}
               <button
                 onClick={() => setCurrent((i) => (i + 1) % total)}
-                className="shrink-0 w-10 h-10 flex items-center justify-center rounded-full border border-gold/30 bg-charcoal/60 backdrop-blur-sm text-gold hover:bg-gold/10 hover:border-gold/50 transition-all cursor-pointer"
+                className="shrink-0 w-10 h-10 flex items-center justify-center rounded-full border border-gold/30 bg-charcoal/60 backdrop-blur-sm text-gold hover:bg-gold/10 hover:border-gold/50 transition-all"
                 aria-label="السابق"
               >
                 <ChevronRight size={20} />
@@ -437,7 +437,7 @@ export default function Hero() {
               {/* Right arrow */}
               <button
                 onClick={() => setCurrent((i) => (i - 1 + total) % total)}
-                className="shrink-0 w-10 h-10 flex items-center justify-center rounded-full border border-gold/30 bg-charcoal/60 backdrop-blur-sm text-gold hover:bg-gold/10 hover:border-gold/50 transition-all cursor-pointer"
+                className="shrink-0 w-10 h-10 flex items-center justify-center rounded-full border border-gold/30 bg-charcoal/60 backdrop-blur-sm text-gold hover:bg-gold/10 hover:border-gold/50 transition-all"
                 aria-label="التالي"
               >
                 <ChevronLeft size={20} />
@@ -452,7 +452,7 @@ export default function Hero() {
           >
             <Link
               href="/cars"
-              className="group relative flex items-center gap-2 px-8 py-4 rounded-xl gold-gradient-bg text-obsidian font-cairo font-bold text-base transition-all duration-300 hover:scale-[1.02] min-h-touchLg whitespace-nowrap shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_35px_rgba(212,175,55,0.5)]"
+              className="group relative flex items-center gap-2 px-8 py-4 rounded-xl gold-gradient-bg text-obsidian font-cairo font-bold text-base transition-all duration-300 hover:scale-[1.02]"
             >
               <span className="absolute inset-0 rounded-xl gold-gradient-bg opacity-50 blur-md -z-10" />
               استكشف جميع السيارات
