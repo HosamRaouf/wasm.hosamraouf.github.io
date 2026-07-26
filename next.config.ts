@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
+console.log('Next.js Config: output=export, basePath=' + (process.env.NODE_ENV === 'production' ? '/wasm.hosamraouf.github.io' : ''));
+
 const nextConfig: NextConfig = {
   output: 'export',
-  distDir: 'out',
   basePath: process.env.NODE_ENV === 'production' ? '/wasm.hosamraouf.github.io' : '',
   images: {
     unoptimized: true,
