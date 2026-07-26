@@ -223,7 +223,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={show ? { opacity: 0.3, scale: 1 } : {}}
           transition={{ duration: 2, ease: 'easeOut' }}
-          style={{ backgroundImage: '/assets/hero-bg.png' }}
+          style={{ backgroundImage: getAssetPath('/assets/hero-bg.png') }}
         />
 
         {/* Fade to black — bottom */}
@@ -329,7 +329,7 @@ export default function Hero() {
               }}
             />
             <img
-              src="/assets/wasm-transparent.png"
+              src={getAssetPath("/assets/wasm-transparent.png")}
               alt="WASM"
               className="relative h-32 sm:h-40 lg:h-48 xl:h-56 w-auto object-contain drop-shadow-[0_0_30px_rgba(212,175,55,0.4)] drop-shadow-[0_0_60px_rgba(212,175,55,0.2)]"
             />

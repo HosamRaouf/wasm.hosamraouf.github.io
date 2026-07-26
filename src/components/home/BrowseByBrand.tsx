@@ -30,7 +30,7 @@ export default function BrowseByBrand() {
             >
               <div className="relative w-36 h-36 sm:w-52 sm:h-52 flex items-center justify-center">
                 <Image
-                  src={brand.logo}
+                  src={getAssetPath(brand.logo)}
                   alt={brand.nameAr}
                   width={208}
                   height={208}

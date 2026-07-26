@@ -62,7 +62,7 @@ export default function MediaGallery({ image, nameAr, isAuction }: MediaGalleryP
               className="relative w-full h-full"
             >
               <Image
-                src={image}
+                src={getAssetPath(image)}
                 alt={`${nameAr} - صورة ${current + 1}`}
                 fill
                 className="object-cover"
@@ -153,7 +153,7 @@ export default function MediaGallery({ image, nameAr, isAuction }: MediaGalleryP
             }`}
           >
             <Image
-              src={image}
+              src={getAssetPath(image)}
               alt={`صورة مصغرة ${i + 1}`}
               fill
               className="object-cover"

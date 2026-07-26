@@ -21,7 +21,7 @@ export default function AboutUs() {
             <div className="absolute -inset-4 rounded-3xl bg-gold/10 blur-2xl" />
             <div className="absolute -inset-8 rounded-3xl bg-gold/[0.04] blur-3xl" />
             <img
-              src="/assets/wasss.png"
+              src={getAssetPath("/assets/wasss.png")}
               alt="وسم للسيارات"
               className="relative h-64 sm:h-80 lg:h-96 w-auto object-contain rounded-2xl"
             />
