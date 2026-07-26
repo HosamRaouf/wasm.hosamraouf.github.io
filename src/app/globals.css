@@ -1,26 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ─── Colors ─────────────────────────────────────────────────── */
+  --color-obsidian: #0B0B0D;
+  --color-charcoal: #16151A;
+  --color-charcoal-light: #1E1D24;
+  --color-gold: #D4AF37;
+  --color-gold-bright: #F5D579;
+  --color-ember: #FF6A1A;
+  --color-ember-dark: #CC4D0A;
+  --color-wood: #3B2417;
+  --color-wood-dark: #2A1A0F;
+  --color-cream: #F5F0E6;
+  --color-muted: #A8A196;
+  --color-danger: #EF4444;
+  --color-subtle-border: rgba(255,255,255,0.06);
+  --color-gold-border: rgba(212,175,55,0.5);
+
+  /* ─── Typography ─────────────────────────────────────────────── */
+  --font-cairo: 'Cairo', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* ─── Spacing & Layout (Tailwind 4) ────────────────────────── */
+  --spacing: 0.25rem;
+
+  /* Custom Layout Tokens (Generates h-nav, top-nav, p-nav, etc.) */
+  --spacing-nav: 90px;
+  --spacing-nav-lg: 104px;
+  --spacing-ticker: 40px;
+
+  /* Icon & Touch Targets */
+  --spacing-icon-sm: 16px;
+  --spacing-icon-md: 20px;
+  --spacing-icon-lg: 24px;
+  --spacing-icon-xl: 32px;
+  --spacing-touch-sm: 40px;
+  --spacing-touch-md: 44px;
+  --spacing-touch-lg: 48px;
+
+  /* ─── Z-Index ───────────────────────────────────────────────── */
+  --z-index-nav: 1000;
+  --z-index-ticker: 900;
+  --z-index-dropdown: 1100;
+  --z-index-modal: 2000;
+
+  /* ─── Font Sizes (Luxury Scale) ─────────────────────────────── */
+  --font-size-2xs: 0.75rem;    /* 12px */
+  --font-size-xs: 0.8125rem;   /* 13px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-md: 1.125rem;    /* 18px */
+  --font-size-lg: 1.25rem;     /* 20px */
+  --font-size-xl: 1.5rem;      /* 24px */
+  --font-size-2xl: 1.875rem;   /* 30px */
+  --font-size-3xl: 2.25rem;    /* 36px */
+  --font-size-4xl: 3rem;       /* 48px */
+  --font-size-5xl: 3.75rem;    /* 60px */
+  --font-size-6xl: 4.5rem;     /* 72px */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ─── Base Styles ──────────────────────────────────────────── */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-obsidian);
+  color: var(--color-cream);
+  font-family: var(--font-cairo), var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+body[dir="ltr"] {
+  font-family: var(--font-inter), var(--font-cairo), sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-charcoal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 3px;
+}
+
+/* ─── Shared Styles ────────────────────────────────────────── */
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-bright));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-bright));
+}
+
+.ember-gradient-bg {
+  background: linear-gradient(135deg, var(--color-ember), var(--color-ember-dark));
+}
+
+.frosted-glass {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Animations ───────────────────────────────────────────── */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,106,26,0.4); }
+  50% { box-shadow: 0 0 12px 4px rgba(255,106,26,0.2); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes dash-flow {
+  to { stroke-dashoffset: -20; }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee-brand {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.animate-marquee-brand {
+  animation: marquee-brand 25s linear infinite;
+}
+
+.animate-marquee-brand:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-reviews {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.animate-marquee-reviews {
+  animation: marquee-reviews 35s linear infinite;
+}
+
+.animate-marquee-reviews:hover {
+  animation-play-state: paused;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 30s linear infinite;
+}
+
+.animate-dash-flow {
+  animation: dash-flow 1.5s linear infinite;
+}
+
+@keyframes shimmer-gold {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.animate-shimmer-gold {
+  animation: shimmer-gold 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
