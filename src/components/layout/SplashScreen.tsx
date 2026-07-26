@@ -54,7 +54,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
     >
       <motion.video
         ref={videoRef}
-        src={getAssetPath("/assets/asseAcceleration_mode_HMI_loading_0-100_202607252037.mp4")}
+        src={getAssetPath("/assets/Acceleration_mode_HMI_loading_0-100_202607252037.mp4")}
         muted
         playsInline
         preload="auto"
