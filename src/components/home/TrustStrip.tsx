@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ShieldCheck, FileText, Truck, CreditCard } from 'lucide-react';
+import { getAssetPath } from '@/lib/paths';
 
 const items = [
   {

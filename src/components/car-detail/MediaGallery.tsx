@@ -4,6 +4,8 @@ import { useState, lazy, Suspense } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, RotateCw, BadgeCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getAssetPath } from '@/lib/paths';
+
 
 const CarViewer360 = lazy(() => import('./CarViewer360'));
 
@@ -62,7 +64,7 @@ export default function MediaGallery({ image, nameAr, isAuction }: MediaGalleryP
               className="relative w-full h-full"
             >
               <Image
-                src={image}
+                src={getAssetPath(image)}
                 alt={`${nameAr} - صورة ${current + 1}`}
                 fill
                 className="object-cover"
@@ -153,7 +155,7 @@ export default function MediaGallery({ image, nameAr, isAuction }: MediaGalleryP
             }`}
           >
             <Image
-              src={image}
+              src={getAssetPath(image)}
               alt={`صورة مصغرة ${i + 1}`}
               fill
               className="object-cover"

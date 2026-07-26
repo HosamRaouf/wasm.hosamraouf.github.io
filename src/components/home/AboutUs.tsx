@@ -2,6 +2,8 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { getAssetPath } from '@/lib/paths';
+
 
 export default function AboutUs() {
   const ref = useRef(null);

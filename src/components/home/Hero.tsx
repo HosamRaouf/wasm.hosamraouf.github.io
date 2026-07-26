@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { ChevronDown, ChevronLeft, ChevronRight, ArrowLeft, Gauge, Fuel } from 'lucide-react';
 import { cars } from '@/lib/data';
+import { getAssetPath } from '@/lib/paths';
 
 /* ─── Animated Gradient Background ─────────────────────────── */
 function AnimatedGradient() {

@@ -3,6 +3,8 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Shield, Car, Users, Wrench } from 'lucide-react';
+import { getAssetPath } from '@/lib/paths';
+
 
 const features = [
   { icon: Shield, titleAr: 'حلول تمويلية متعددة', descAr: 'تعاقدنا مع العديد من جهات التمويل المختلفة سواء بنوك أو شركات تمويل، لنقدم أفضل حلول الشراء بالتقسيط التي تناسب جميع عملائنا' },

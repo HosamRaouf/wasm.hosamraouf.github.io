@@ -1,6 +1,8 @@
 'use client';
 
 import { ShieldAlert } from 'lucide-react';
+import { getAssetPath } from '@/lib/paths';
+
 
 interface LiveBidCardProps {
   currentBid: number;
