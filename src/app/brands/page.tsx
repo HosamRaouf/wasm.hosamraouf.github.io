@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ChevronLeft } from 'lucide-react';
 import { brands, cars } from '@/lib/data';
+import { getAssetPath } from '@/lib/paths';
 
 const container = {
   hidden: {},
@@ -53,7 +54,7 @@ export default function BrandsPage() {
                 >
                   <div className="relative w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
                     <Image
-                      src={brand.logo}
+                      src={getAssetPath(brand.logo)}
                       alt={brand.nameAr}
                       width={128}
                       height={128}
